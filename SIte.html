@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PadelShop.be — De beste padelrackets voor elk niveau</title>
+  <meta name="description" content="Onafhankelijke reviews en aanbevelingen van padelrackets. Vind het perfecte racket voor jouw niveau." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; color: #222; background: #fff; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 700; }
+    .logo span { color: #1D9E75; }
+    .nav-links { display: flex; gap: 24px; font-size: 15px; color: #555; }
+    .nav-links a:hover { color: #1D9E75; }
+
+    /* HERO */
+    .hero { padding: 64px 40px; text-align: center; background: #f7faf9; }
+    .hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #111; }
+    .hero p { font-size: 18px; color: #555; max-width: 560px; margin: 0 auto 28px; line-height: 1.6; }
+    .btn { display: inline-block; padding: 12px 28px; background: #1D9E75; color: white; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .btn:hover { background: #178a64; }
+
+    /* SECTIONS */
+    .section { padding: 48px 40px; }
+    .section-alt { background: #f7faf9; }
+    .section-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .section-sub { font-size: 15px; color: #666; margin-bottom: 28px; }
+
+    /* PRODUCT CARDS */
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .card { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 20px; transition: box-shadow 0.2s; }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .card-img { width: 100%; height: 140px; background: #f0f7f4; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 56px; margin-bottom: 14px; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: #e1f5ee; color: #0F6E56; margin-bottom: 10px; }
+    .badge-top { background: #fff3e0; color: #b85c00; }
+    .badge-budget { background: #e8f0fe; color: #1a56a0; }
+    .card-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .card-brand { font-size: 13px; color: #888; margin-bottom: 6px; }
+    .card-desc { font-size: 13px; color: #555; margin-bottom: 12px; line-height: 1.5; }
+    .card-price { font-size: 22px; font-weight: 700; color: #1D9E75; margin-bottom: 14px; }
+    .card-btn { display: block; width: 100%; padding: 10px; background: #1D9E75; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; text-align: center; transition: background 0.2s; }
+    .card-btn:hover { background: #178a64; }
+
+    /* FILTER BUTTONS */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .filter-btn { padding: 8px 18px; border: 1px solid #ddd; border-radius: 20px; font-size: 14px; cursor: pointer; background: #fff; transition: all 0.2s; }
+    .filter-btn.active, .filter-btn:hover { background: #1D9E75; color: white; border-color: #1D9E75; }
+
+    /* USP */
+    .usps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .usp { padding: 20px; text-align: center; }
+    .usp-icon { font-size: 32px; margin-bottom: 10px; }
+    .usp-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .usp-text { font-size: 13px; color: #666; line-height: 1.5; }
+
+    /* GIDS */
+    .gids-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .gids-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 20px; }
+    .gids-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .gids-card p { font-size: 14px; color: #555; line-height: 1.5; }
+    .gids-link { display: inline-block; margin-top: 12px; font-size: 14px; color: #1D9E75; font-weight: 600; }
+
+    /* FOOTER */
+    footer { padding: 32px 40px; border-top: 1px solid #eee; text-align: center; font-size: 13px; color: #888; }
+    footer a { color: #1D9E75; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 40px 20px; }
+      .hero h1 { font-size: 26px; }
+      .section { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Padel<span>Shop</span>.be</div>
+  <div class="nav-links">
+    <a href="#rackets">Rackets</a>
+    <a href="#gids">Koopgids</a>
+    <a href="#over">Over ons</a>
+  </div>
+  <a href="#rackets" class="btn" style="padding: 8px 18px; font-size: 14px;">Bekijk rackets</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>De beste padelrackets voor elk niveau</h1>
+  <p>Onafhankelijke reviews en aanbevelingen. Wij vergelijken de beste rackets zodat jij de juiste keuze maakt.</p>
+  <a href="#rackets" class="btn">Bekijk alle rackets →</a>
+</div>
+
+<!-- USP -->
+<div class="section section-alt" id="over">
+  <div class="usps">
+    <div class="usp">
+      <div class="usp-icon">✅</div>
+      <div class="usp-title">Onafhankelijke reviews</div>
+      <div class="usp-text">Eerlijke meningen zonder reclame-invloed</div>
+    </div>
+    <div class="usp">
+      <div class="usp-icon">💶</div>
+      <div class="usp-title">Beste prijzen</div>
+      <div class="usp-text">Wij vergelijken prijzen voor jou</div>
+    </div>
+    <div class="usp">
+      <div class="usp-icon">🎯</div>
+      <div class="usp-title">Voor elk niveau</div>
+      <div class="usp-text">Van beginner tot gevorderde speler</div>
+    </div>
+    <div class="usp">
+      <div class="usp-icon">⚡</div>
+      <div class="usp-title">Snel geleverd</div>
+      <div class="usp-text">Via bol.com, morgen in huis</div>
+    </div>
+  </div>
+</div>
+
+<!-- RACKETS -->
+<div class="section" id="rackets">
+  <div class="section-title">Aanbevolen padelrackets</div>
+  <div class="section-sub">Zorgvuldig geselecteerd op prijs, kwaliteit en niveau</div>
+
+  <div class="filters">
+    <button class="filter-btn active">Alle</button>
+    <button class="filter-btn">Beginner</button>
+    <button class="filter-btn">Gevorderd</button>
+    <button class="filter-btn">Budget &lt; €80</button>
+    <button class="filter-btn">Premium &gt; €100</button>
+  </div>
+
+  <div class="products">
+    <div class="card">
+      <div class="card-img">🏓</div>
+      <span class="badge">⭐ Beste keuze</span>
+      <div class="card-name">Head Alpha Pro</div>
+      <div class="card-brand">Head • Beginners / Intermediair</div>
+      <div class="card-desc">Ideaal voor beginners die snel willen verbeteren. Licht gewicht, goede controle.</div>
+      <div class="card-price">€89,99</div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=head+alpha+pro+padel" target="_blank" class="card-btn">Bekijk op bol.com →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-img">🏓</div>
+      <span class="badge badge-top">🔥 Top verkoper</span>
+      <div class="card-name">Babolat Air Viper</div>
+      <div class="card-brand">Babolat • Intermediair</div>
+      <div class="card-desc">Uitstekende balans tussen power en controle. Populairste racket van dit moment.</div>
+      <div class="card-price">€129,99</div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=babolat+air+viper+padel" target="_blank" class="card-btn">Bekijk op bol.com →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-img">🏓</div>
+      <span class="badge badge-budget">💙 Budget tip</span>
+      <div class="card-name">Wilson Tempo</div>
+      <div class="card-brand">Wilson • Beginner</div>
+      <div class="card-desc">Perfect instapmodel voor nieuwe spelers. Betaalbaar en duurzaam.</div>
+      <div class="card-price">€59,99</div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=wilson+tempo+padel" target="_blank" class="card-btn">Bekijk op bol.com →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-img">🏓</div>
+      <span class="badge">💎 Premium</span>
+      <div class="card-name">Adidas Adipower CTRL</div>
+      <div class="card-brand">Adidas • Gevorderd</div>
+      <div class="card-desc">Maximale controle voor gevorderde spelers. Professionele kwaliteit.</div>
+      <div class="card-price">€179,99</div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=adidas+adipower+ctrl+padel" target="_blank" class="card-btn">Bekijk op bol.com →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-img">🏓</div>
+      <span class="badge">⚡ Power</span>
+      <div class="card-name">NOX AT10</div>
+      <div class="card-brand">NOX • Gevorderd</div>
+      <div class="card-desc">Krachtig racket voor spelers die van aanvallen houden. Hoge speelsnelheid.</div>
+      <div class="card-price">€149,99</div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=nox+at10+padel" target="_blank" class="card-btn">Bekijk op bol.com →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-img">🏓</div>
+      <span class="badge badge-budget">💙 Prijs/kwaliteit</span>
+      <div class="card-name">Dunlop Blitz</div>
+      <div class="card-brand">Dunlop • Beginner / Intermediair</div>
+      <div class="card-desc">Geweldige prijs-kwaliteitverhouding. Ideaal als tweede racket of voor beginners.</div>
+      <div class="card-price">€74,99</div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=dunlop+blitz+padel" target="_blank" class="card-btn">Bekijk op bol.com →</a>
+    </div>
+  </div>
+</div>
+
+<!-- KOOPGIDS -->
+<div class="section section-alt" id="gids">
+  <div class="section-title">Koopgids — welk racket past bij jou?</div>
+  <div class="section-sub">Alles wat je moet weten voor je een racket koopt</div>
+  <div class="gids-grid">
+    <div class="gids-card">
+      <h3>🔰 Beginner</h3>
+      <p>Als beginnende speler heb je een licht racket nodig met een groot sweetspot. Kies voor een rond of druppelvormig racket onder de €100. Onze aanbeveling: Wilson Tempo of Head Alpha Pro.</p>
+      <a href="#rackets" class="gids-link">Bekijk beginners rackets →</a>
+    </div>
+    <div class="gids-card">
+      <h3>⚡ Gevorderd</h3>
+      <p>Gevorderde spelers kiezen vaak een diamantvormig racket voor meer power. Budget tussen €100-€200. Onze aanbeveling: Babolat Air Viper of NOX AT10.</p>
+      <a href="#rackets" class="gids-link">Bekijk gevorderde rackets →</a>
+    </div>
+    <div class="gids-card">
+      <h3>💶 Budget onder €80</h3>
+      <p>Goed padelracket hoeft niet duur te zijn. Onze budgettips geven je veel waarde voor weinig geld. Onze aanbeveling: Wilson Tempo of Dunlop Blitz.</p>
+      <a href="#rackets" class="gids-link">Bekijk budget rackets →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">© 2025 PadelShop.be — Onafhankelijke affiliate website</p>
+  <p>Bij aankoop via onze links ontvangen wij een kleine commissie van bol.com. Dit kost jou niets extra.</p>
+</footer>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
